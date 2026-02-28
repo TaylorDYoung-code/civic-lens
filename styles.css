@@ -237,6 +237,7 @@ p, small{
         grid-template-columns: 1fr 3fr;
         gap: 0.5rem;
         align-items: center;
+        
     } 
     footer{
         background-color: var(--blue-bulletin);
@@ -248,13 +249,26 @@ p, small{
 #breaking-news h2{
     background-color: var(--news-flash);
     color: var(--watchdog-white);
-    padding: 0.5rem;}
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
 #breaking-news h3{
+  display: block;
+  grid-template-columns: 1fr;
     color: var(--story-subtitle);
+    font-size: 1.25rem;
+    
+}
+video{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem auto;
+    border-radius: .5rem;
 }
 #alerts p{
   display:block;
- text-align: center;
+ text-align: left;
 }
 /* ///ADD/// large styles 920px */
 @media screen and (min-width: 920px){
@@ -280,11 +294,21 @@ p, small{
     color: var(--watchdog-white);
     padding: 0.5rem;}
 #breaking-news h3{
+  display: block;
+  grid-template-columns: 1fr 1fr;
     color: var(--story-subtitle);
+}
+video{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem auto;
+    border-radius: .5rem;
 }
 #alerts p{
   display:block;
- text-align: center;
+  grid-template-columns: auto 1fr;
+ text-align: left;
 }
 
 /* ///ADD/// x-large styles 1024px */
@@ -298,8 +322,10 @@ p, small{
         gap: 0.5rem;
         align-items: center;
     }
+  }
     footer{
         background-color: var(--blue-bulletin);
+        grid-template-columns: auto 1fr;
         color: var(--watchdog-white);
          text-align: center;
         padding-left: 5%;
@@ -309,11 +335,19 @@ p, small{
     color: var(--watchdog-white);
     padding: 0.5rem;}
 #breaking-news h3{
+  grid-template-columns: 1fr 1fr;
     color: var(--story-subtitle);
+}
+video{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem auto;
+    border-radius: .5rem;
 }
 #alerts p{
   display:block;
- text-align: center;
+ text-align: left;
 }
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
