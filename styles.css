@@ -1,10 +1,58 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Taylor Young*/
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ----- END OF CSS RESET ----- */
 
 /* Root Variables */
 :root {
@@ -12,6 +60,7 @@
   --news-flash: #E63946;
   --watchdog-white: #F1FAEE;
   --truth-text: #333;
+  --light-blue: #21BCFF;
   --story-subtitle: #457B9D;
   --font-body: "Source Sans 3", sans-serif;
   --font-heading: 'Merriweather', serif;
@@ -39,25 +88,255 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
-
+.sr-only {
+    background: var(--light-blue);
+    color: var(--watchdog-white);
+    text-decoration: none;
+    height: 1rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    position: absolute;
+    transform: translateX(-150%);
+    transition: transform 0.3s;
+}
+.sr-only:focus {
+    transform: translateX(0%);
+}
 /* ///ADD/// Navigation Styles */
+	nav{
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	
+	nav ul{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: var(--blue-bulletin);
+    border-radius: 0.25rem;
+    justify-items: center;
+		gap: .5rem;
+    padding: 1rem;
+	}
+  nav a{
+    color: var(--watchdog-white);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+  }
 
 /* ///ADD/// Global Layout Styles */
-
+*{
+    box-sizing: border-box;
+    line-height: 1.35;
+}
+.menu-button{
+  color: var(--watchdog-white);
+  background: none;
+}
+form{
+    display: block;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: .5rem;
+    color:#333;
+} 
+#welcome{
+  display: block;
+    background-color: var(--blue-bulletin);
+    color: var(--watchdog-white);
+    padding: 1rem;
+    justify-items: center;
+     border-radius: .5rem;
+}
+#welcome p{
+    font-size: 1.25rem;
+    font-family: var(--font-body);
+    text-align: center;
+}
+#fullName, #mobileNumber{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--blue-bulletin);
+    border-radius: .25rem;
+    font-family: var(--font-body);
+}
+fieldset{
+    border: 1px solid var(--blue-bulletin);
+    border-radius: .5rem;
+    padding: 1rem;}
+legend{
+    font-weight: bold;
+    font-family: var(--font-heading);
+    color: var(--blue-bulletin);}
+button{
+    background-color: var(--blue-bulletin);
+    color: var(--watchdog-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.5rem;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    filter: blur(1px);
+    filter: contrast(200%);
+    filter: grayscale(50%);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
 /* ///ADD/// Global Text Styles */
+h1, h2{
+	font-weight: bold;
+	text-align: center;
+	margin: 1rem 0;
+  font-family: var(--font-heading);
+}
 
+h3{
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-family: var(--font-heading);
+}
+h1{
+	font-size: 2rem;
+}
 
+h2{
+	font-size: 1.5rem;
+}
+.tagline{
+    font-size: 1.25em;
+    font-style: italic;
+    color: var(--watchdog-white);
+    margin-bottom: 1rem;
+  	text-align: center;
+}
+main{
+    display: grid;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 1em auto;
+}
+p, small{
+    font-size: 1em;
+    margin: 0.25em;
+    padding: 0.25em;
+    max-width: 75ch;
+    font-family: var(--font-body);
+}
 /* ///ADD/// medium styles 620px */
-
-
+@media screen and (min-width: 620px){
+    header{
+        background-color: var(--blue-bulletin);
+        color: var(--watchdog-white);
+        padding-left: 5%;
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 0.5rem;
+        align-items: center;
+    } 
+    footer{
+        background-color: var(--blue-bulletin);
+         text-align: center;
+        color: var(--watchdog-white);
+        padding-left: 5%;
+    }
+  }
+#breaking-news h2{
+    background-color: var(--news-flash);
+    color: var(--watchdog-white);
+    padding: 0.5rem;}
+#breaking-news h3{
+    color: var(--story-subtitle);
+}
+#alerts p{
+  display:block;
+ text-align: center;
+}
 /* ///ADD/// large styles 920px */
-
+@media screen and (min-width: 920px){
+    header{
+        background-color: var(--blue-bulletin);
+        color: var(--watchdog-white);
+        padding-left: 5%;
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 0.5rem;
+        align-items: center;
+    } 
+    footer{
+        background-color: var(--blue-bulletin);
+        color: var(--watchdog-white);
+         text-align: center;
+        padding-left: 5%;
+    }
+  }
+  
+#breaking-news h2{
+    background-color: var(--news-flash);
+    color: var(--watchdog-white);
+    padding: 0.5rem;}
+#breaking-news h3{
+    color: var(--story-subtitle);
+}
+#alerts p{
+  display:block;
+ text-align: center;
+}
 
 /* ///ADD/// x-large styles 1024px */
-
+@media screen and (min-width: 1024px) {
+    header{
+        background-color: var(--blue-bulletin);
+        color: var(--watchdog-white);
+        padding-left: 5%;
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    footer{
+        background-color: var(--blue-bulletin);
+        color: var(--watchdog-white);
+         text-align: center;
+        padding-left: 5%;
+  }
+#breaking-news h2{
+    background-color: var(--news-flash);
+    color: var(--watchdog-white);
+    padding: 0.5rem;}
+#breaking-news h3{
+    color: var(--story-subtitle);
+}
+#alerts p{
+  display:block;
+ text-align: center;
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
-
+@media (prefers-color-scheme: dark){
+    .day.dark-scheme   {background:#333; color: white;}
+    .night.dark-scheme {background:black; color: #ddd;}
+    }
+ @media (prefers-color-scheme: light){
+    .day.light-scheme   {background:#ddd; color: black;}
+    .night.light-scheme {background:white; color: #333;}
+    }
+   @-webkit-keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+    @keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .icon {
+            -webkit-animation: none;
+                    animation: none;
+        }
+    }
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
